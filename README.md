@@ -1,4 +1,8 @@
-Start project
+## Install
+
+npm install
+
+## Start project
 
 ```sh
 npm start
