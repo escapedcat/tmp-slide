@@ -2,7 +2,7 @@
 .btn-flyout {
 	height: 2.7em;
 	width: 4em;
-	background-color: #337b52;
+	background: none;
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -10,6 +10,9 @@
 	border-top-left-radius: 1em;	
 }
 
+.btn-flyout {
+	background-color: rgba(#337b52,0.5);
+}
 
 .flyout {
 	display: none;
