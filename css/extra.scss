@@ -1,0 +1,22 @@
+.btn-flyout {
+	height: 2.7em;
+	width: 4em;
+	background-color: #337b52;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border: none;
+	border-top-left-radius: 1em;
+}
+
+.flyout {
+	display: none;
+	
+	z-index: 11;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #337b52;
+	width: 10em;
+	height: 20em
+}

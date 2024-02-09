@@ -27,14 +27,15 @@
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
           </p>
 				</section>
-        
 			</div>
 		</div>
+    <!-- <button onclick="Reveal.next()">Next</button> -->
+    <button id="handle-btn-flyout" class="btn-flyout"></button>
+    <div id="handle-flyout" class="flyout">
+      <button id="handle-btn-flyout-close" class="btn-flyout-close">close</button>
+    </div>
 
 		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -45,9 +46,26 @@
         autoSlide: 5000,
         loop: true,
 
+        controlsBackArrows: 'visible',
+        progress: false,
+
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				// plugins: [ ]
 			});
+
+      const btnFlyout = document.getElementById('handle-btn-flyout');
+      const flyout = document.getElementById('handle-flyout');
+      const btnFlyoutClose = document.getElementById('handle-btn-flyout-close');
+      btnFlyout.addEventListener('click', function(e){
+        console.log(this.getAttribute('id'))
+
+        flyout.style.display = 'block';
+      });
+      btnFlyoutClose.addEventListener('click', function(e){
+        console.log(this.getAttribute('id'))
+
+        flyout.style.display = 'none';
+      });
 		</script>
 	</body>
 </html>

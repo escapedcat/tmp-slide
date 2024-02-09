@@ -9,6 +9,8 @@
  */
 
 @import 'layout';
+@import 'extra';
+
 
 /*********************************************
  * GLOBAL STYLES
@@ -256,9 +258,9 @@ html.reveal-full-page {
 }
 
 $controlArrowSize: 3.6em;
-$controlArrowSpacing: 1.4em;
-$controlArrowLength: 2.6em;
-$controlArrowThickness: 0.5em;
+$controlArrowSpacing: .2em;
+$controlArrowLength: 1em;
+$controlArrowThickness: 0.2em;
 $controlsArrowAngle: 45deg;
 $controlsArrowAngleHover: 40deg;
 $controlsArrowAngleActive: 36deg;
@@ -277,8 +279,8 @@ $controlsArrowAngleActive: 36deg;
 	display: none;
 	position: absolute;
 	top: auto;
-	bottom: var(--r-controls-spacing);
-	right: var(--r-controls-spacing);
+	bottom: 0;
+	right: 5em;
 	left: auto;
 	z-index: 11;
 	color: #000;
@@ -292,7 +294,7 @@ $controlsArrowAngleActive: 36deg;
 		border: 0;
 		outline: 0;
 		cursor: pointer;
-		color: currentColor;
+		color: white;
 		transform: scale(.9999);
 		transition: color 0.2s ease,
 					opacity 0.2s ease,
@@ -329,6 +331,8 @@ $controlsArrowAngleActive: 36deg;
 		width: $controlArrowSize;
 		height: $controlArrowSize;
 
+		background-color: #222;
+		
 		@include controlsArrowTransform( $controlsArrowAngle );
 
 		&:hover {
@@ -344,6 +348,11 @@ $controlsArrowAngleActive: 36deg;
 		right: $controlArrowSize + $controlArrowSpacing*2;
 		bottom: $controlArrowSpacing + $controlArrowSize*0.5;
 		transform: translateX( -10px );
+		
+		.controls-arrow {
+			border-top-left-radius: 1em;
+			border-top-right-radius: 1em;
+		}
 
 		&.highlight {
 			animation: bounce-left 2s 50 both ease-out;
@@ -357,6 +366,8 @@ $controlsArrowAngleActive: 36deg;
 
 		.controls-arrow {
 			transform: rotate( 180deg );
+			border-bottom-left-radius: 1em;
+			border-bottom-right-radius: 1em;
 		}
 
 		&.highlight {
@@ -473,13 +484,15 @@ $controlsArrowAngleActive: 36deg;
 // Adjust the layout when there are no vertical slides
 .reveal[data-navigation-mode="linear"].has-horizontal-slides .navigate-left,
 .reveal:not(.has-vertical-slides) .controls .navigate-left {
-	bottom: $controlArrowSpacing;
+	// bottom: $controlArrowSpacing;
+	bottom: 0;
 	right: 0.5em + $controlArrowSpacing + $controlArrowSize;
 }
 
 .reveal[data-navigation-mode="linear"].has-horizontal-slides .navigate-right,
 .reveal:not(.has-vertical-slides) .controls .navigate-right {
-	bottom: $controlArrowSpacing;
+	// bottom: $controlArrowSpacing;
+	bottom: 0;
 	right: 0.5em;
 }
 
